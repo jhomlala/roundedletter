@@ -38,10 +38,10 @@ RoundedLetter.withBlueCircle("D", 40, 20);
 <table>
   <tr>
     <td>
-  <img width="30%" height="30%" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png">
+  <img width="200px" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png">
     </td>
     <td>
-       <img width="30%" height="30%" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot2.png">
+       <img width="200px" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot2.png">
     </td>
   </tr>
   
