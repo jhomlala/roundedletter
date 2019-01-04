@@ -1,23 +1,23 @@
 # :star2: Rounded Letter
 
-[![pub package](https://img.shields.io/pub/v/rounded_letter.svg)](https://github.com/jhomlala/roundedletter)
+[![pub package](https://img.shields.io/pub/v/rounded_letter.svg)](https://pub.dartlang.org/packages/rounded_letter)
 
 Letter inside circle. Can be used for placeholders.
 
-##  Install
+## :electric_plug: Install
 
 ```yaml
 dependencies:
   rounded_letter: ^0.0.2
 ```
 
-###  Import
+### :bulb: Import
 
 ```dart
 import 'package:rounded_letter/rounded_letter.dart';
 ```
 
-###  Usage
+### :question: Usage
 
 ```dart
 //minimal example, with default circle size = 40, letter font size = 20 and blue color
