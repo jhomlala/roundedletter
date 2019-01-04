@@ -1,7 +1,7 @@
 name: rounded_letter
 description: Letter inside circle
 version: 0.0.1
-author: Jakub Homlala
+author: Jakub Homlala <jhomlala@gmail.com>
 homepage: https://github.com/jhomlala/roundedletter
 
 environment:
