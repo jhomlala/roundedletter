@@ -1,5 +1,3 @@
-
-
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -7,17 +5,19 @@ import 'package:flutter/widgets.dart';
 class RoundedLetter extends StatefulWidget {
   RoundedLetter(
       {Key key,
-        this.circleColor = const Color.fromARGB(255, 48, 63, 159),
-        this.fontColor = const Color.fromARGB(255, 255, 255, 255),
-        this.circleSize = 40,
-        @required this.letter,
-        this.fontSize = 20})
+      this.circleColor = const Color.fromARGB(255, 48, 63, 159),
+      this.fontColor = const Color.fromARGB(255, 255, 255, 255),
+      this.circleSize = 40,
+      @required this.letter,
+      this.fontSize = 20})
       : assert(!(letter == null), "Please specify valid letter"),
         assert(!(letter.length != 1), "Please specify string with length = 1"),
         assert(!(circleSize < 0), "Please specify circle size greater than 0"),
-        assert(!(fontSize > circleSize/2),
-        "Font size can't be greater than circle radius"),
+        assert(!(fontSize > circleSize / 2),
+            "Font size can't be greater than circle radius"),
         assert(!(fontSize < 0), "Please specify font size greater than 0"),
+        assert(!(circleColor == null), "Circle color can't be null"),
+        assert(!(fontColor == null), "Font color can't be null"),
         super(key: key);
 
   final Color circleColor;
@@ -88,26 +88,26 @@ class _RoundedLetterState extends State<RoundedLetter> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-        height: widget.circleSize ,
+        height: widget.circleSize,
         width: widget.circleSize,
         child: CustomPaint(
             painter: _Painter(
-              circleColor: widget.circleColor,
-              fontColor: widget.fontColor,
-              circleSize: widget.circleSize,
-              fontSize: widget.fontSize,
-              letter: widget.letter,
-            )));
+          circleColor: widget.circleColor,
+          fontColor: widget.fontColor,
+          circleSize: widget.circleSize,
+          fontSize: widget.fontSize,
+          letter: widget.letter,
+        )));
   }
 }
 
 class _Painter extends CustomPainter {
   _Painter(
       {@required this.circleColor,
-        @required this.fontColor,
-        @required this.circleSize,
-        @required this.letter,
-        @required this.fontSize});
+      @required this.fontColor,
+      @required this.circleSize,
+      @required this.letter,
+      @required this.fontSize});
 
   final Color circleColor;
   final Color fontColor;
@@ -117,17 +117,33 @@ class _Painter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawCircle(Offset(circleSize/2, circleSize/2), circleSize/2,
+    double radius = _getRadius();
+    canvas.drawCircle(Offset(radius,radius), radius,
         Paint()..color = circleColor);
     TextSpan span = new TextSpan(
-        style: new TextStyle(
-            color: fontColor, fontSize: fontSize, fontFamily: 'Roboto'),
-        text: letter);
+        style: new TextStyle(color: fontColor, fontSize: fontSize),
+        text: letter.toUpperCase());
     TextPainter tp =
-    new TextPainter(text: span, textDirection: TextDirection.ltr);
+        new TextPainter(text: span, textDirection: TextDirection.ltr);
     tp.layout();
-    tp.paint(canvas,
-        new Offset(circleSize/2 - fontSize / 3, circleSize/2 - fontSize / 1.75));
+    tp.paint(canvas, new Offset(_getTextOffsetX(), _getTextOffsetY()));
+  }
+
+  double _getTextOffsetX() {
+    double radius = _getRadius();
+    if (letter == "M" || letter == "W") {
+      return radius - fontSize / 2.5;
+    } else {
+      return radius - fontSize / 3;
+    }
+  }
+
+  double _getTextOffsetY() {
+    return _getRadius() - fontSize / 1.75;
+  }
+
+  double _getRadius(){
+    return circleSize / 2;
   }
 
   @override

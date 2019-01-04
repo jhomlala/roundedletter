@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:rounded_letter/rounded_letter.dart';
 
 void main() => runApp(MyApp());
@@ -21,6 +20,11 @@ class _MyAppState extends State<MyApp> {
     names.add("Ross");
     names.add("Joey");
     names.add("Thomas");
+    names.add("Harry");
+    names.add("Percy");
+    names.add("Yvone");
+    names.add("Xavier");
+    names.add("Zac");
     surnames.add("Callinan");
     surnames.add("Mcgrath");
     surnames.add("Luster");
@@ -74,7 +78,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   String _getRandomSurname() {
-    return surnames[_random.nextInt(names.length)];
+    return surnames[_random.nextInt(surnames.length)];
   }
 
   RoundedLetter _getRandomColorRoundedLetter(String letter) {
