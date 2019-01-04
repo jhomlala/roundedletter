@@ -22,3 +22,7 @@ import 'package:rounded_letter/rounded_letter.dart';
 ```dart
 RoundedLetter(letter: "A");
 ```
+
+### Screenshots
+![alt text](https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png "Screenshot")
+
