@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/rounded_letter.svg)](https://pub.dartlang.org/packages/rounded_letter)
 
-Letter inside circle. Can be used for placeholders.
+Useful Flutter widget which allows you to create letter inside circle. Can be used for placeholders (for example user avatars).
 
 ## :electric_plug: Install
 
