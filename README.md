@@ -26,5 +26,5 @@ RoundedLetter(letter: "A");
 ### Screenshots
 
 <p align="center">
-  <img width="50%" height="50%" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png">
+  <img width="30%" height="30%" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png">
 </p>
