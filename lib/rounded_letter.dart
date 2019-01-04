@@ -117,12 +117,6 @@ class _Painter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print("Cricle size: " + circleSize.toString());
-    print("Font size: " + fontSize.toString());
-    print("Letter: " + letter);
-    print("FontColor:" + fontColor.toString());
-    print("CircleColor: " + circleColor.toString());
-    print("Size: " + size.toString());
     canvas.drawCircle(Offset(circleSize/2, circleSize/2), circleSize/2,
         Paint()..color = circleColor);
     TextSpan span = new TextSpan(
