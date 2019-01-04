@@ -8,7 +8,7 @@ Letter inside circle. Can be used for placeholders.
 
 ```yaml
 dependencies:
-  rounded_letter: ^0.0.1
+  rounded_letter: ^0.0.2
 ```
 
 ###  Import
