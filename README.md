@@ -20,7 +20,17 @@ import 'package:rounded_letter/rounded_letter.dart';
 ###  Usage
 
 ```dart
+//minimal example, with default circle size = 40, letter font size = 20 and blue color
 RoundedLetter(letter: "A");
+
+//circle with red color and circle size = 40 and letter font size = 20
+RoundedLetter.withRedCircle("B", 40, 20);
+
+//circle with green color and circle size = 40 and letter font size = 20
+RoundedLetter.withGreenCircle("C", 40, 20);
+
+//circle with blue color and circle size = 40 and letter font size = 20
+RoundedLetter.withBlueCircle("D", 40, 20);
 ```
 
 ### Screenshots
