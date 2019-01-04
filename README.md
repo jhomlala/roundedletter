@@ -24,8 +24,7 @@ RoundedLetter(letter: "A");
 ```
 
 ### Screenshots
-![alt text](https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png "Screenshot")
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png">
+  <img width="50%" height="50%" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot1.png">
 </p>
