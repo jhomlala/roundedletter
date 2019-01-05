@@ -4,10 +4,10 @@
 
 Useful Flutter widget which allows you to create letter inside circle. Can be used for placeholders (for example user avatars).
 
-## Features
-:heavy_check_mark: 2 shapes: Rectangle and Circle
-:heavy_check_mark: Customizable shape size and color, text size and color
-:heavy_check_mark: Support for 1 and 2 letter(s)
+## Features :raised_hands:
+:heavy_check_mark: 2 shapes: Rectangle and Circle  
+:heavy_check_mark: Customizable shape size and color, text size and color  
+:heavy_check_mark: Support for 1 and 2 letter(s)  
 :heavy_check_mark: Shape border
 
 ## :electric_plug: Install
