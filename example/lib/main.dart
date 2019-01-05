@@ -1,9 +1,7 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:rounded_letter/rounded_letter.dart';
+import 'package:rounded_letter/shape_type.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,15 +47,37 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: const Text('Rounded Letter'),
             ),
-            body: Container(child: ListView(children: initList()))));
+            body: Container(child: getSimpleRoundedLetter())));
   }
 
-  List<Widget> initList() {
+  Widget getRectangleLetter() {
+    return RoundedLetter(
+      text: "JH",
+      shapeType: ShapeType.rectangle,
+      borderColor: Color.fromARGB(255, 0, 0, 0),
+      borderWidth: 2,
+    );
+  }
+
+  Widget getSimpleRoundedLetter() {
+    return RoundedLetter(text: "A");
+  }
+
+  Widget getRoundedLetterWithBorder() {
+    return RoundedLetter(
+        text: "B",
+        shapeSize: 80,
+        fontSize: 40,
+        borderWidth: 2,
+        borderColor: Color.fromARGB(255, 0, 0, 0));
+  }
+
+  Widget getListWithRoundedLetters() {
     List<Widget> widgets = new List();
     for (var i = 0; i < 50; i++) {
       widgets.add(getRow());
     }
-    return widgets;
+    return ListView(children: widgets);
   }
 
   Widget getRow() {
@@ -86,6 +106,7 @@ class _MyAppState extends State<MyApp> {
     switch (_random.nextInt(3)) {
       case 0:
         roundedLetter = RoundedLetter.withRedCircle(letter, 40, 20);
+
         break;
       case 1:
         roundedLetter = RoundedLetter.withGreenCircle(letter, 40, 20);
@@ -94,7 +115,7 @@ class _MyAppState extends State<MyApp> {
         roundedLetter = RoundedLetter.withBlueCircle(letter, 40, 20);
         break;
       default:
-        roundedLetter = new RoundedLetter(letter: letter);
+        roundedLetter = new RoundedLetter(text: letter);
     }
     return roundedLetter;
   }
