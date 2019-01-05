@@ -14,7 +14,7 @@ Useful Flutter widget which allows you to create letter inside circle. Can be us
 
 ```yaml
 dependencies:
-  rounded_letter: ^0.0.2
+  rounded_letter: ^0.0.3
 ```
 
 ### :bulb: Import
