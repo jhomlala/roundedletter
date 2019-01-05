@@ -42,7 +42,7 @@ RoundedLetter(
     );
 
 //full example:
-    RoundedLetter(
+RoundedLetter(
       text: "JH",
       shapeType: ShapeType.rectangle,
       fontColor: Color.fromARGB(255,255,255,255),
@@ -51,7 +51,7 @@ RoundedLetter(
       fontSize: 20,
       borderWidth: 2,
       borderColor: Color.fromARGB(255, 0, 0, 0),
-    )
+    );
 ```
 
 ### Screenshots
