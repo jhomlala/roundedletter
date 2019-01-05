@@ -31,6 +31,27 @@ RoundedLetter.withGreenCircle("C", 40, 20);
 
 //circle with blue color and circle size = 40 and letter font size = 20
 RoundedLetter.withBlueCircle("D", 40, 20);
+
+//rectangle
+RoundedLetter(
+      text: "JH",
+      shapeColor: Color.fromARGB(255, 245, 127, 23),
+      shapeType: ShapeType.rectangle,
+      borderColor: Color.fromARGB(255, 0, 0, 0),
+      borderWidth: 2,
+    );
+
+//full example:
+    RoundedLetter(
+      text: "JH",
+      shapeType: ShapeType.rectangle,
+      fontColor: Color.fromARGB(255,255,255,255),
+      shapeColor: Color.fromARGB(255, 245, 127, 23),
+      shapeSize: 40,
+      fontSize: 20,
+      borderWidth: 2,
+      borderColor: Color.fromARGB(255, 0, 0, 0),
+    )
 ```
 
 ### Screenshots
@@ -42,6 +63,9 @@ RoundedLetter.withBlueCircle("D", 40, 20);
     </td>
     <td>
        <img width="250px" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot_2.png">
+    </td>
+    <td>
+       <img width="250px" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot_3.png">
     </td>
   </tr>
   
