@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:meta/meta.dart';
 import 'package:rounded_letter/shape_type.dart';
 

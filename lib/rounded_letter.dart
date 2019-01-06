@@ -12,7 +12,7 @@ import 'package:rounded_letter/shape_configuration.dart';
 import 'package:rounded_letter/shape_type.dart';
 import 'package:rounded_letter/triangle_shape.dart';
 
-class RoundedLetter extends StatefulWidget {
+class RoundedLetter extends StatelessWidget {
   RoundedLetter(
       {Key key,
       this.shapeType = ShapeType.circle,
@@ -46,9 +46,6 @@ class RoundedLetter extends StatefulWidget {
   final double borderWidth;
   final Color borderColor;
   final ClickListener clickListener;
-
-  @override
-  State<StatefulWidget> createState() => _RoundedLetterState();
 
   static Color _getRandomColor() {
     var random = new Random();
@@ -100,19 +97,17 @@ class RoundedLetter extends StatefulWidget {
       fontSize: fontSize,
     );
   }
-}
 
-class _RoundedLetterState extends State<RoundedLetter> {
   ShapeConfiguration _buildShapeConfiguration() {
     return ShapeConfiguration(
-      shapeType: widget.shapeType,
-      shapeColor: widget.shapeColor,
-      fontSize: widget.fontSize,
-      shapeSize: widget.shapeSize,
-      fontColor: widget.fontColor,
-      text: widget.text,
-      borderWidth: widget.borderWidth,
-      borderColor: widget.borderColor,
+      shapeType: shapeType,
+      shapeColor: shapeColor,
+      fontSize: fontSize,
+      shapeSize: shapeSize,
+      fontColor: fontColor,
+      text: text,
+      borderWidth: borderWidth,
+      borderColor: borderColor,
     );
   }
 
@@ -120,13 +115,13 @@ class _RoundedLetterState extends State<RoundedLetter> {
   Widget build(BuildContext context) {
     return new GestureDetector(
         onTap: () {
-          if (widget.clickListener != null){
-            widget.clickListener.onClick(widget.key);
+          if (clickListener != null) {
+            clickListener.onClick(key);
           }
         },
         child: new Container(
-            height: widget.shapeSize,
-            width: widget.shapeSize,
+            height: shapeSize,
+            width: shapeSize,
             child: CustomPaint(
                 painter: _Painter(
               shapeConfiguration: _buildShapeConfiguration(),
