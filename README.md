@@ -4,6 +4,8 @@
 
 Useful Flutter widget which allows you to create letter inside shape. Can be used for placeholders (for example user avatars).
 
+This package is named 'Rounded letter' because main idea was letter inside circle just like Android 5.0 contacts. Later idea has evolved into more shapes.
+
 ## Features :raised_hands:
 :heavy_check_mark: 5 shapes: Circle(default), Triangle, Rectangle, Pentagon, Hexagon  
 :heavy_check_mark: Customizable shape size and color, text size and color  
