@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 import 'package:rounded_letter/shape_type.dart';
 
