@@ -1,5 +1,5 @@
 ## 0.0.4
-* Added support for hexagon and pentagon
+* Added support for triangle, hexagon and pentagon
 * Added support for click detection. Use ClickListener to detect click. To get know which element was
 pressed, setup key parameter
 * Code refactor
