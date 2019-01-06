@@ -8,7 +8,7 @@ Useful Flutter widget which allows you to create letter inside shape. Can be use
 :heavy_check_mark: 5 shapes: Circle(default), Triangle, Rectangle, Pentagon, Hexagon  
 :heavy_check_mark: Customizable shape size and color, text size and color  
 :heavy_check_mark: Support for 1 and 2 letter(s)  
-:heavy_check_mark: Shape border
+:heavy_check_mark: Shape border  
 :heavy_check_mark: Support for gesture detection
 
 ## :electric_plug: Install
