@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rounded_letter/color_helper.dart';
 import 'package:rounded_letter/cricle_shape.dart';
+import 'package:rounded_letter/hexagon_shape.dart';
+import 'package:rounded_letter/pentagon_shape.dart';
 import 'package:rounded_letter/rectangle_shape.dart';
 import 'package:rounded_letter/shape.dart';
 import 'package:rounded_letter/shape_configuration.dart';
@@ -141,6 +143,12 @@ class _Painter extends CustomPainter {
         break;
       case ShapeType.rectangle:
         shape = RectangleShape(shapeConfiguration);
+        break;
+      case ShapeType.pentagon:
+        shape = PentagonShape(shapeConfiguration);
+        break;
+      case ShapeType.hexagon:
+        shape = HexagonShape(shapeConfiguration);
         break;
     }
     shape.draw(canvas, size);

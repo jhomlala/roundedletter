@@ -54,6 +54,8 @@ class _MyAppState extends State<MyApp> {
     List<Widget> widgets = new List();
     widgets.add(_getRowWithRectangles());
     widgets.add(_getRowWithTriangles());
+    widgets.add(_getRowWithPentagons());
+    widgets.add(_getRowWithHexagons());
     for (var i = 0; i < 50; i++) {
       widgets.add(getRow());
     }
@@ -146,6 +148,91 @@ class _MyAppState extends State<MyApp> {
         ));
   }
 
+  Widget _getRowWithPentagons() {
+    return Container(
+        margin: new EdgeInsets.symmetric(vertical: 5.0),
+        child: Row(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "JH",
+              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              shapeType: ShapeType.pentagon,
+              borderColor: Color.fromARGB(255, 0, 0, 0),
+              borderWidth: 2,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "JH",
+              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              shapeType: ShapeType.pentagon,
+              borderColor: Color.fromARGB(255, 0, 0, 0),
+              borderWidth: 2,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "JH",
+              shapeColor: Color.fromARGB(255, 245, 127, 23),
+              shapeType: ShapeType.pentagon,
+              borderColor: Color.fromARGB(255, 0, 0, 0),
+              borderWidth: 2,
+            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "J",
+              shapeColor: Color.fromARGB(255, 205, 220, 57),
+              shapeType: ShapeType.pentagon,
+            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "H",
+              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
+              shapeType: ShapeType.pentagon,
+            )
+          ],
+        ));
+  }
+
+  Widget _getRowWithHexagons() {
+    return Container(
+        margin: new EdgeInsets.symmetric(vertical: 5.0),
+        child: Row(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "JH",
+              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              shapeType: ShapeType.hexagon,
+              borderColor: Color.fromARGB(255, 0, 0, 0),
+              borderWidth: 2,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "JH",
+              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              shapeType: ShapeType.hexagon,
+              borderColor: Color.fromARGB(255, 0, 0, 0),
+              borderWidth: 2,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "JH",
+              shapeColor: Color.fromARGB(255, 245, 127, 23),
+              shapeType: ShapeType.hexagon,
+              borderColor: Color.fromARGB(255, 0, 0, 0),
+              borderWidth: 2,
+            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "J",
+              shapeColor: Color.fromARGB(255, 205, 220, 57),
+              shapeType: ShapeType.hexagon,
+            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            RoundedLetter(
+              text: "H",
+              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
+              shapeType: ShapeType.hexagon,
+            )
+          ],
+        ));
+  }
   Widget getRow() {
     var name = _getRandomName();
     var surname = _getRandomSurname();
