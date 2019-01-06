@@ -1,6 +1,6 @@
 name: rounded_letter
-description: Cool placeholder for avatars
-version: 0.0.3
+description: Useful Flutter widget which allows you to create letter inside shape. Can be used for placeholders (for example user avatars).
+version: 0.0.4
 author: Jakub Homlala <jhomlala@gmail.com>
 homepage: https://github.com/jhomlala/roundedletter
 
