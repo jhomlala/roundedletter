@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:rounded_letter/click_listener.dart';
 import 'package:rounded_letter/rounded_letter.dart';
 import 'package:rounded_letter/shape_type.dart';
 
@@ -34,6 +35,7 @@ class _MyAppState extends State<MyApp> {
   Random _random = new Random();
   List<String> names = List();
   List<String> surnames = List();
+  SampleClickListener listener = new SampleClickListener();
 
   @override
   void initState() {
@@ -74,6 +76,8 @@ class _MyAppState extends State<MyApp> {
               shapeType: ShapeType.rectangle,
               borderColor: Color.fromARGB(255, 0, 0, 0),
               borderWidth: 2,
+              key: Key("Rectangle1"),
+              clickListener: listener,
             ),
             Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
@@ -272,4 +276,14 @@ class _MyAppState extends State<MyApp> {
     }
     return roundedLetter;
   }
+
+
+}
+
+class SampleClickListener extends ClickListener{
+  @override
+  onClick(Key key) {
+   print("Clicked on " + key.toString());
+  }
+
 }

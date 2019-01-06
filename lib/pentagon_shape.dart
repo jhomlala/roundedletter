@@ -26,7 +26,7 @@ class PentagonShape extends Shape {
   @override
   double getTextOffsetY(double height) {
     if (shapeConfiguration.text.length == 2) {
-      return super.getTextOffsetY(height) - height / 5;
+      return super.getTextOffsetY(height) - height / 8;
     } else {
       return super.getTextOffsetY(height);
     }

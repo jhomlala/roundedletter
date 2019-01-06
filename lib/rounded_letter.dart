@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:rounded_letter/click_listener.dart';
 import 'package:rounded_letter/color_helper.dart';
 import 'package:rounded_letter/cricle_shape.dart';
 import 'package:rounded_letter/hexagon_shape.dart';
@@ -12,17 +13,18 @@ import 'package:rounded_letter/shape_type.dart';
 import 'package:rounded_letter/triangle_shape.dart';
 
 class RoundedLetter extends StatefulWidget {
-  RoundedLetter({
-    Key key,
-    this.shapeType = ShapeType.circle,
-    this.shapeColor = ColorHelper.defaultShapeColor,
-    this.fontColor = ColorHelper.defaultFontColor,
-    this.shapeSize = 40,
-    @required this.text,
-    this.fontSize = 20,
-    this.borderWidth = 0,
-    this.borderColor = ColorHelper.transparent,
-  })  : assert(!(text == null), "Invalid letter"),
+  RoundedLetter(
+      {Key key,
+      this.shapeType = ShapeType.circle,
+      this.shapeColor = ColorHelper.defaultShapeColor,
+      this.fontColor = ColorHelper.defaultFontColor,
+      this.shapeSize = 40,
+      @required this.text,
+      this.fontSize = 20,
+      this.borderWidth = 0,
+      this.borderColor = ColorHelper.transparent,
+      this.clickListener})
+      : assert(!(text == null), "Invalid letter"),
         assert(!(text.length <= 1 && text.length >= 2),
             "String length must be 1 or 2"),
         assert(!(shapeSize < 0), "Shape size must be greater than 0"),
@@ -43,6 +45,7 @@ class RoundedLetter extends StatefulWidget {
   final double fontSize;
   final double borderWidth;
   final Color borderColor;
+  final ClickListener clickListener;
 
   @override
   State<StatefulWidget> createState() => _RoundedLetterState();
@@ -102,25 +105,32 @@ class RoundedLetter extends StatefulWidget {
 class _RoundedLetterState extends State<RoundedLetter> {
   ShapeConfiguration _buildShapeConfiguration() {
     return ShapeConfiguration(
-        shapeType: widget.shapeType,
-        shapeColor: widget.shapeColor,
-        fontSize: widget.fontSize,
-        shapeSize: widget.shapeSize,
-        fontColor: widget.fontColor,
-        text: widget.text,
-        borderWidth: widget.borderWidth,
-        borderColor: widget.borderColor);
+      shapeType: widget.shapeType,
+      shapeColor: widget.shapeColor,
+      fontSize: widget.fontSize,
+      shapeSize: widget.shapeSize,
+      fontColor: widget.fontColor,
+      text: widget.text,
+      borderWidth: widget.borderWidth,
+      borderColor: widget.borderColor,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-        height: widget.shapeSize,
-        width: widget.shapeSize,
-        child: CustomPaint(
-            painter: _Painter(
-          shapeConfiguration: _buildShapeConfiguration(),
-        )));
+    return new GestureDetector(
+        onTap: () {
+          if (widget.clickListener != null){
+            widget.clickListener.onClick(widget.key);
+          }
+        },
+        child: new Container(
+            height: widget.shapeSize,
+            width: widget.shapeSize,
+            child: CustomPaint(
+                painter: _Painter(
+              shapeConfiguration: _buildShapeConfiguration(),
+            ))));
   }
 }
 
