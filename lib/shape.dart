@@ -13,8 +13,7 @@ abstract class Shape {
   void draw(Canvas canvas, Size size);
 
   drawText(Canvas canvas){
-    TextSpan textSpan = CanvasHelper.setupTextSpan(shapeConfiguration.fontColor,
-        shapeConfiguration.fontSize, shapeConfiguration.text);
+    TextSpan textSpan = CanvasHelper.setupTextSpan(shapeConfiguration);
     TextPainter textPainter = CanvasHelper.setupTextPainter(textSpan);
     textPainter.layout();
     textPainter.paint(

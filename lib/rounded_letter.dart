@@ -18,12 +18,15 @@ class RoundedLetter extends StatelessWidget {
       this.shapeType = ShapeType.circle,
       this.shapeColor = ColorHelper.defaultShapeColor,
       this.fontColor = ColorHelper.defaultFontColor,
+        this.fontItalic = false,
+        this.fontBold = false,
       this.shapeSize = 40,
       @required this.text,
       this.fontSize = 20,
       this.borderWidth = 0,
       this.borderColor = ColorHelper.transparent,
-      this.clickListener})
+      this.clickListener,
+      })
       : assert(!(text == null), "Invalid letter"),
         assert(!(text.length <= 1 && text.length >= 2),
             "String length must be 1 or 2"),
@@ -40,6 +43,8 @@ class RoundedLetter extends StatelessWidget {
   final ShapeType shapeType;
   final Color shapeColor;
   final Color fontColor;
+  final bool fontItalic;
+  final bool fontBold;
   final double shapeSize;
   final String text;
   final double fontSize;
@@ -103,6 +108,8 @@ class RoundedLetter extends StatelessWidget {
       shapeType: shapeType,
       shapeColor: shapeColor,
       fontSize: fontSize,
+      fontItalic: fontItalic,
+      fontBold: fontBold,
       shapeSize: shapeSize,
       fontColor: fontColor,
       text: text,

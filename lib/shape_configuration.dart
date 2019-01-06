@@ -7,6 +7,8 @@ class ShapeConfiguration {
     @required this.shapeType,
     @required this.shapeColor,
     @required this.fontColor,
+    @required this.fontItalic,
+    @required this.fontBold,
     @required this.shapeSize,
     @required this.text,
     @required this.fontSize,
@@ -17,6 +19,8 @@ class ShapeConfiguration {
   final ShapeType shapeType;
   final Color shapeColor;
   final Color fontColor;
+  final bool fontItalic;
+  final bool fontBold;
   final double shapeSize;
   final String text;
   final double fontSize;

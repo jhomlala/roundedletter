@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
+import 'package:rounded_letter/shape_configuration.dart';
 
 class CanvasHelper {
   static Path getTrianglePath(double shapeSize, double offset) {
@@ -15,7 +16,7 @@ class CanvasHelper {
 
   static Path getPolygonalPath(double shapeSize, double offset, int vertices) {
     double angle = 3.141592 * 2 / vertices;
-    double half = shapeSize /2;
+    double half = shapeSize / 2;
     double radius = half - offset;
     double centreX = half;
     double centreY = half;
@@ -30,11 +31,24 @@ class CanvasHelper {
     return path;
   }
 
-  static TextSpan setupTextSpan(Color fontColor, double fontSize, String text) {
+  static TextSpan setupTextSpan(ShapeConfiguration shapeConfiguration) {
+    FontWeight fontWeight = FontWeight.normal;
+    FontStyle fontStyle = FontStyle.normal;
+    if (shapeConfiguration.fontBold) {
+      fontWeight = FontWeight.bold;
+    }
+    if (shapeConfiguration.fontItalic) {
+      fontStyle = FontStyle.italic;
+    }
+
     return new TextSpan(
         style: new TextStyle(
-            color: fontColor, fontSize: fontSize, letterSpacing: 0),
-        text: text);
+            color: shapeConfiguration.fontColor,
+            fontSize: shapeConfiguration.fontSize,
+            fontStyle: fontStyle,
+            fontWeight: fontWeight,
+            letterSpacing: 0),
+        text: shapeConfiguration.text);
   }
 
   static TextPainter setupTextPainter(TextSpan textSpan) {
