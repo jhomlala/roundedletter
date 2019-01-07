@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rounded_letter/click_listener.dart';
 import 'package:rounded_letter/rounded_letter.dart';
 import 'package:rounded_letter/shape_type.dart';
+import 'package:rounded_letter_example/divider_painter.dart';
 
 void main() => runApp(MyApp());
 
@@ -54,58 +55,84 @@ class _MyAppState extends State<MyApp> {
 
   Widget getListWithRoundedLetters() {
     List<Widget> widgets = new List();
+    widgets.addAll(buildDivider("Rectangles", "Example rectangle shapes"));
     widgets.add(_getRowWithRectangles());
+    widgets.addAll(buildDivider("Triangles", "Example triangle shapes"));
     widgets.add(_getRowWithTriangles());
+    widgets.addAll(buildDivider("Pentagons", "Example pentagon shapes"));
     widgets.add(_getRowWithPentagons());
+    widgets.addAll(buildDivider("Hexagons", "Example hexagon shapes"));
     widgets.add(_getRowWithHexagons());
+    widgets.addAll(
+        buildDivider("Italic/bold", "Example shapes with italic/bold text"));
     widgets.add(_getRowWithDifferentFontStyles());
+    widgets.addAll(
+        buildDivider("Clickable element", "Example clickable shape. Click result is printed to console"));
+    widgets.add(_getRowWithClickableExample());
+    widgets.addAll(buildDivider("Default circles", "Example circles"));
     for (var i = 0; i < 50; i++) {
       widgets.add(getRow());
     }
     return ListView(children: widgets);
   }
 
+  List<Widget> buildDivider(String text, String subtitle) {
+    List<Widget> widgets = new List();
+
+    widgets.add(Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)));
+    widgets.add(Center(child: Text(text, style: TextStyle(fontSize: 20))));
+    widgets.add(Center(child: Text(subtitle, style: TextStyle(fontSize: 12))));
+    widgets.add(Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)));
+    widgets.add(Container(child: CustomPaint(painter: DividerPainter())));
+    widgets.add(Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)));
+    return widgets;
+  }
+
   Widget _getRowWithRectangles() {
     return Container(
         margin: new EdgeInsets.symmetric(vertical: 5.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
             RoundedLetter(
               text: "JH",
-              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              shapeColor: Color(0xFFF4511E),
               shapeType: ShapeType.rectangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFFBF360C),
+              borderWidth: 1,
               key: Key("Rectangle1"),
               clickListener: listener,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              text: "Mw",
+              shapeColor: Color(0xFF689F38),
               shapeType: ShapeType.rectangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFF33691E),
+              borderWidth: 1,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 245, 127, 23),
+              text: "VB",
+              shapeColor: Color(0xFF039BE5),
               shapeType: ShapeType.rectangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF01579B),
+              borderWidth: 1,
+            ),
             RoundedLetter(
-              text: "J",
-              shapeColor: Color.fromARGB(255, 205, 220, 57),
+              text: "O",
+              shapeColor: Color(0xFF00897B),
               shapeType: ShapeType.rectangle,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF004D40),
+              borderWidth: 1,
+            ),
             RoundedLetter(
-              text: "H",
-              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
+              text: "X",
+              shapeColor: Color(0xFF5E35B1),
               shapeType: ShapeType.rectangle,
-            )
+              borderColor: Color(0xFF311B92),
+              borderWidth: 1,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
           ],
         ));
   }
@@ -114,41 +141,50 @@ class _MyAppState extends State<MyApp> {
     return Container(
         margin: new EdgeInsets.symmetric(vertical: 5.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              text: "EF",
+              shapeColor: Color(0xFFF4511E),
               shapeType: ShapeType.triangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFFBF360C),
+              borderWidth: 1,
+              fontSize: 15,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              text: "HH",
+              shapeColor: Color(0xFF689F38),
               shapeType: ShapeType.triangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFF33691E),
+              borderWidth: 1,
+              fontSize: 15,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 245, 127, 23),
+              text: "Yt",
+              shapeColor: Color(0xFF039BE5),
               shapeType: ShapeType.triangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF01579B),
+              borderWidth: 1,
+              fontSize: 15,
+            ),
+            RoundedLetter(
+              text: "P",
+              shapeColor: Color(0xFF00897B),
+              shapeType: ShapeType.triangle,
+              borderColor: Color(0xFF004D40),
+              borderWidth: 1,
+              fontSize: 15,
+            ),
             RoundedLetter(
               text: "J",
-              shapeColor: Color.fromARGB(255, 205, 220, 57),
+              shapeColor: Color(0xFF5E35B1),
               shapeType: ShapeType.triangle,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
-            RoundedLetter(
-              text: "H",
-              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
-              shapeType: ShapeType.triangle,
-            )
+              borderColor: Color(0xFF311B92),
+              borderWidth: 1,
+              fontSize: 15,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
           ],
         ));
   }
@@ -157,41 +193,47 @@ class _MyAppState extends State<MyApp> {
     return Container(
         margin: new EdgeInsets.symmetric(vertical: 5.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              text: "ED",
+              shapeColor: Color(0xFFF4511E),
               shapeType: ShapeType.pentagon,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFFBF360C),
+              borderWidth: 1,
+              key: Key("Rectangle1"),
+              clickListener: listener,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              text: "AB",
+              shapeColor: Color(0xFF689F38),
               shapeType: ShapeType.pentagon,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFF33691E),
+              borderWidth: 1,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 245, 127, 23),
+              text: "Rd",
+              shapeColor: Color(0xFF039BE5),
               shapeType: ShapeType.pentagon,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF01579B),
+              borderWidth: 1,
+            ),
             RoundedLetter(
-              text: "J",
-              shapeColor: Color.fromARGB(255, 205, 220, 57),
+              text: "M",
+              shapeColor: Color(0xFF00897B),
               shapeType: ShapeType.pentagon,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF004D40),
+              borderWidth: 1,
+            ),
             RoundedLetter(
-              text: "H",
-              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
+              text: "C",
+              shapeColor: Color(0xFF5E35B1),
               shapeType: ShapeType.pentagon,
-            )
+              borderColor: Color(0xFF311B92),
+              borderWidth: 1,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
           ],
         ));
   }
@@ -200,41 +242,45 @@ class _MyAppState extends State<MyApp> {
     return Container(
         margin: new EdgeInsets.symmetric(vertical: 5.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              text: "Kl",
+              shapeColor: Color(0xFFF4511E),
               shapeType: ShapeType.hexagon,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFFBF360C),
+              borderWidth: 1,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              text: "FG",
+              shapeColor: Color(0xFF689F38),
               shapeType: ShapeType.hexagon,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFF33691E),
+              borderWidth: 1,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 245, 127, 23),
+              text: "RH",
+              shapeColor: Color(0xFF039BE5),
               shapeType: ShapeType.hexagon,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF01579B),
+              borderWidth: 1,
+            ),
             RoundedLetter(
-              text: "J",
-              shapeColor: Color.fromARGB(255, 205, 220, 57),
+              text: "A",
+              shapeColor: Color(0xFF00897B),
               shapeType: ShapeType.hexagon,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+              borderColor: Color(0xFF004D40),
+              borderWidth: 1,
+            ),
             RoundedLetter(
-              text: "H",
-              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
+              text: "N",
+              shapeColor: Color(0xFF5E35B1),
               shapeType: ShapeType.hexagon,
-            )
+              borderColor: Color(0xFF311B92),
+              borderWidth: 1,
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
           ],
         ));
   }
@@ -243,50 +289,75 @@ class _MyAppState extends State<MyApp> {
     return Container(
         margin: new EdgeInsets.symmetric(vertical: 5.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
+            Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 0, 188, 212),
+              text: "AB",
+              shapeColor: Color(0xFFF4511E),
               shapeType: ShapeType.circle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
-              fontItalic: true,
+              borderColor: Color(0xFFBF360C),
+              borderWidth: 1,
+              fontBold: true,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 27, 94, 32),
+              text: "Ac",
+              shapeColor: Color(0xFF689F38),
               shapeType: ShapeType.rectangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
+              borderColor: Color(0xFF33691E),
+              borderWidth: 1,
+              fontItalic: true,
+            ),
+            RoundedLetter(
+              text: "O",
+              shapeColor: Color(0xFF039BE5),
+              shapeType: ShapeType.triangle,
+              borderColor: Color(0xFF01579B),
+              borderWidth: 1,
+              fontBold: true,
+              fontItalic: true,
+            ),
+            RoundedLetter(
+              text: "N",
+              shapeColor: Color(0xFF00897B),
+              shapeType: ShapeType.pentagon,
+              borderColor: Color(0xFF004D40),
+              borderWidth: 1,
               fontBold: true,
             ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
             RoundedLetter(
-              text: "JH",
-              shapeColor: Color.fromARGB(255, 245, 127, 23),
-              shapeType: ShapeType.triangle,
-              borderColor: Color.fromARGB(255, 0, 0, 0),
-              borderWidth: 2,
-              fontItalic: true,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
-            RoundedLetter(
-              text: "J",
-              shapeColor: Color.fromARGB(255, 205, 220, 57),
-              shapeType: ShapeType.pentagon,
-              fontBold: true,
-            ), Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0)),
-            RoundedLetter(
-              text: "H",
-              shapeColor: Color.fromARGB(255, 41, 98, 255 ),
+              text: "r",
+              shapeColor: Color(0xFF5E35B1),
               shapeType: ShapeType.hexagon,
+              borderColor: Color(0xFF311B92),
+              borderWidth: 1,
               fontItalic: true,
-            )
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
           ],
         ));
   }
 
+  Widget _getRowWithClickableExample() {
+    return Container(
+        margin: new EdgeInsets.symmetric(vertical: 5.0),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RoundedLetter(
+                text: "CL",
+                shapeColor: Color(0xFFF4511E),
+                shapeType: ShapeType.circle,
+                borderColor: Color(0xFFBF360C),
+                borderWidth: 1,
+                shapeSize: 80,
+                fontSize: 40,
+                fontBold: true,
+                key: Key("clickable_circle"),
+                clickListener: SampleClickListener(),
+              ),
+            ]));
+  }
 
   Widget getRow() {
     var name = _getRandomName();
@@ -327,14 +398,11 @@ class _MyAppState extends State<MyApp> {
     }
     return roundedLetter;
   }
-
-
 }
 
-class SampleClickListener extends ClickListener{
+class SampleClickListener extends ClickListener {
   @override
   onClick(Key key) {
-   print("Clicked on " + key.toString());
+    print("Clicked on " + key.toString());
   }
-
 }

@@ -26,13 +26,6 @@ class TriangleShape extends Shape {
   double getTextOffsetY(double height) {
     return super.getTextOffsetY(height) + height/4;
   }
-  @override
-  double getTextOffsetX(double width) {
-    if (shapeConfiguration.text.length == 2) {
-      return super.getTextOffsetX(width) - width / 8;
-    } else {
-      return super.getTextOffsetX(width);
-    }
-  }
+
 
 }

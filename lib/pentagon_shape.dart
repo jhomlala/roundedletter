@@ -22,20 +22,4 @@ class PentagonShape extends Shape {
     drawText(canvas);
   }
 
-  @override
-  double getTextOffsetY(double height) {
-    if (shapeConfiguration.text.length == 2) {
-      return super.getTextOffsetY(height) - height / 8;
-    } else {
-      return super.getTextOffsetY(height);
-    }
-  }
-  @override
-  double getTextOffsetX(double width) {
-    if (shapeConfiguration.text.length == 2) {
-      return super.getTextOffsetX(width) - width / 8;
-    } else {
-      return super.getTextOffsetX(width);
-    }
-  }
 }
