@@ -17,7 +17,7 @@ This package is named 'Rounded letter' because main idea was letter inside circl
 
 ```yaml
 dependencies:
-  rounded_letter: ^0.0.4
+  rounded_letter: ^0.0.5
 ```
 
 ### :bulb: Import
@@ -37,6 +37,9 @@ import 'package:rounded_letter/rounded_letter.dart';
     </td>
     <td>
        <img width="250px" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot_3.png">
+    </td>
+    <td>
+       <img width="250px" src="https://github.com/jhomlala/roundedletter/blob/master/screenshots/screenshot_4.png">
     </td>
   </tr>
   
