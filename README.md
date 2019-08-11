@@ -17,7 +17,7 @@ This package is named 'Rounded letter' because main idea was letter inside circl
 
 ```yaml
 dependencies:
-  rounded_letter: ^0.0.6
+  rounded_letter: ^0.0.76
 ```
 
 ### :bulb: Import
